@@ -1,0 +1,6 @@
+vim /etc/default/automysqlbackup 
+vim /usr/sbin/automysqlbackup 
+
+
+
+OPT="--quote-names --skip-lock-tables"
