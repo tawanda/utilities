@@ -1,0 +1,19 @@
+# jj goes into escape mode if using atoms vim feature
+
+
+#keymap.cson
+'.editor.vim-mode.insert-mode':
+  'j': 'exit-insert-mode-if-proceeded-by-j'
+  
+  
+#init.coffee
+atom.commands.add 'atom-text-editor', 'exit-insert-mode-if-proceeded-by-j': (e) ->
+  editor = @getModel()
+  pos = editor.getCursorBufferPosition()
+  range = [pos.traverse([0,-1]), pos]
+  lastChar = editor.getTextInBufferRange(range)
+  if lastChar != "j"
+    e.abortKeyBinding()
+  else
+    editor.backspace()
+    atom.commands.dispatch(e.currentTarget, 'vim-mode:activate-command-mode')
