@@ -1,0 +1,7 @@
+run this in the terminal after installing fish to 
+
+# make shift-tab complete the autosuggestion
+bind [Z accept-autosuggestion
+
+# make tab do the complete (This is the default so dont change unless you mess up somehow)
+bind \U9 complete
