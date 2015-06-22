@@ -1,7 +1,15 @@
-run this in the terminal after installing fish to 
+Run this in the terminal after installing fish to 
 
 # make shift-tab complete the autosuggestion
 bind [Z accept-autosuggestion
 
 # make tab do the complete (This is the default so dont change unless you mess up somehow)
 bind \U9 complete
+
+
+
+# To use you add the fish_user_key_bindings function to your ~/.config/fish/config.fish  file
+
+function fish_user_key_bindings
+     bind [Z accept-autosuggestion
+end
