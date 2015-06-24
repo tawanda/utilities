@@ -1,0 +1,14 @@
+# To view your remote postgress db in pycharm
+
+#Database Tab
+Host:127.0.0.1 # or localhost
+Database: database_name
+User: postgres #or the user you made
+Password: password #if you specified one
+
+#SSH/TLS Tab
+Proxy Host: 127.0.0.1
+Port:2222
+proxy user: vagrant
+Auth type: Key pair
+Private key file: /home/your_home_folder/vagran_project_location/project_name/.vagrant/machines/default/virtualbox/private_key
