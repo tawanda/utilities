@@ -5,6 +5,7 @@ Host:127.0.0.1 # or localhost
 Database: database_name
 User: postgres #or the user you made
 Password: password #if you specified one
+port: 5432
 
 #SSH/TLS Tab
 Proxy Host: 127.0.0.1
