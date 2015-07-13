@@ -88,9 +88,14 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
 source /usr/bin/virtualenvwrapper.sh
 
+#==========================CALC=======================
+# A command line calculator
+#example usages
+#   calc 1 + 1
+#   calc "((3+(2^3)) * 34^2 / 9)-75.89"
+calc(){ awk "BEGIN{ print $* }" ;}
 
-
-#========================cb=========================
+#========================CLIPBOARD COPY=========================
 # A shortcut function that simplifies usage of xclip.
 # - Accepts input from either stdin (pipe), or params.
 
