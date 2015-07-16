@@ -1,0 +1,31 @@
+# To create a systemd service
+
+# make your service file
+
+/etc/systemd/system/myapp.service 
+
+# with the following content:
+
+
+[Unit]
+Description=Some text
+
+[Service]
+ExecStart=/myapp/myapp.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
+# enabled it with
+systemctl enable app.service
+
+# check its status
+systemctl status app.service
+
+# Examples of ExecStart
+# Full paths only for ExecStart
+
+ExecStart=/usr/bin/python /root/pidora-keyboard.py & > /dev/null
+
+ExecStart= /etc/myscript.sh
