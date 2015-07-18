@@ -1,0 +1,22 @@
+
+
+
+
+
+
+
+
+
+
+
+===================vidudo=========================
+
+#to edit /etc/sudores type:
+visudo
+
+--settings--
+# Default for password prompt to stay up with no user input 0=forever
+Defaults passwd_timeout=0
+
+# Defualt for a session to remember your password 0=forever
+Defaults timestamp_timeout=0
