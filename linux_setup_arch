@@ -18,5 +18,5 @@ visudo
 # Default for password prompt to stay up with no user input 0=forever
 Defaults passwd_timeout=0
 
-# Defualt for a session to remember your password 0=forever
+# Defualt for a session to remember your password 0=always  0<forever (i.e a negative number)
 Defaults timestamp_timeout=0
