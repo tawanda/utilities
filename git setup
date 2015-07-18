@@ -1,6 +1,8 @@
+# change remote url
+# https://help.github.com/articles/changing-a-remote-s-url/
 
+# Show origin
+git remote -v
 
-
-change remote url
-https://help.github.com/articles/changing-a-remote-s-url/
-
+# Change origin
+git remote set-url origin https://github.com/tawanda/example.git
