@@ -1,5 +1,16 @@
 
 
+===========Installing debian packages on arch ==========
+
+---option1-----
+pacman -S dpkg
+dpkg -i package.deb
+
+---option2------
+pacman -S deb2targz
+# convert it somehow, look at man pages
+pacman -U /path/to/filename.tar.gz
+
 
 
 
