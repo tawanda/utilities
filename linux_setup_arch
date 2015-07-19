@@ -7,8 +7,8 @@ pacman -S dpkg
 dpkg -i package.deb
 
 ---option2------
-pacman -S deb2targz
-# convert it somehow, look at man pages
+pacaur -S deb2targz
+deb2targz filename.deb
 pacman -U /path/to/filename.tar.gz
 
 
