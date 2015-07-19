@@ -12,6 +12,14 @@ pacman -S deb2targz
 pacman -U /path/to/filename.tar.gz
 
 
+====yum=========
+
+yum search something
+
+yum install something
+
+yum install something.i586.rpm
+
 
 
 
