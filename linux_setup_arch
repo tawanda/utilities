@@ -4,9 +4,9 @@
 
 
 
+=================set vim as default editor=======
 
-
-
+sudo update-alternatives --config editor
 
 
 ===================vidudo=========================
