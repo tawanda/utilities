@@ -1,0 +1,102 @@
+  _ _                  
+ | (_)_ __  _   ___  __
+ | | | '_ \| | | \ \/ /
+ | | | | | | |_| |>  < 
+ |_|_|_| |_|\__,_/_/\_\
+                       
+
+=================set vim as default editor=======
+
+sudo update-alternatives --config editor
+
+
+===================vidudo=========================
+
+#to edit /etc/sudores type:
+visudo
+
+--settings--
+# Default for password prompt to stay up with no user input 0=forever
+Defaults passwd_timeout=0
+
+# Defualt for a session to remember your password 0=always  0<forever (i.e a negative number)
+Defaults timestamp_timeout=0
+
+======================================================
+
+
+     _             _       _ _                  
+    / \   _ __ ___| |__   | (_)_ __  _   ___  __
+   / _ \ | '__/ __| '_ \  | | | '_ \| | | \ \/ /
+  / ___ \| | | (__| | | | | | | | | | |_| |>  < 
+ /_/   \_\_|  \___|_| |_| |_|_|_| |_|\__,_/_/\_\
+                                                
+
+===========Installing debian packages on arch ==========
+
+---option1-----
+pacman -S dpkg
+dpkg -i package.deb
+
+---option2------
+pacaur -S deb2targz
+deb2targz filename.deb
+pacman -U /path/to/filename.tar.gz
+
+
+====yum on arch=========
+
+yum search something
+
+yum install something
+
+yum install something.i586.rpm
+
+=========================================
+
+  _   _ _                 _           _ _                  
+ | | | | |__  _   _ _ __ | |_ _   _  | (_)_ __  _   ___  __
+ | | | | '_ \| | | | '_ \| __| | | | | | | '_ \| | | \ \/ /
+ | |_| | |_) | |_| | | | | |_| |_| | | | | | | | |_| |>  < 
+  \___/|_.__/ \__,_|_| |_|\__|\__,_| |_|_|_| |_|\__,_/_/\_\
+                                                           
+                                                           
+=====================Manage packages==========================
+
+#Create a backup of what packages are currently installed:
+dpkg --get-selections > list.txt
+
+#Then (on another system) restore installations from that list:
+dpkg --clear-selections
+sudo dpkg --set-selections < list.txt
+
+#To get rid of stale packages
+sudo apt-get autoremove
+
+#To get installed like at backup time (i.e. to install packages set by dpkg --set-selections)
+sudo apt-get dselect-upgrade
+
+--------How to list installed package and its details on ubuntu-----------
+
+#Simple and elegant:
+
+sudo dpkg -l | more
+
+#or
+
+sudo dpkg -l | less
+
+#If you want to get the description of some specific packages say firefox:
+sudo dpkg -l | grep firefox
+
+#To get the date and time of packages being installed
+cat /var/log/dpkg.log | grep " install "
+
+#To get for specific package:
+cat /var/log/dpkg.log | grep " install " | grep banshee
+
+
+
+
+
+
