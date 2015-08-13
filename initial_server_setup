@@ -1,0 +1,94 @@
+# Change root password to a strong one
+
+passwd
+
+# Create a new user
+adduser demo
+
+# Add root previlages, run this as root
+gpasswd -a demo sudo
+
+###### Add Public Key Authentication ########
+1) Generate a Key Pair for authentication without password on yoour local machine
+
+$ ssh-keygen -t rsa -b 2048 -v
+
+Enter this command to generate 2,048 bit RSA key using verbose (questions asked during) mode, 
+and a public .pem X.509 certificate.
+
+
+You will be asked for a file name, eg you enter hetzner
+it will generate a hetzner.pub file and the hetzner file without file extension, rename it to hetzner.pem,
+You will be asked to enter passphrase, ignored this option by pressing enter 
+
+2) Uploading the generated certificate from client computer to server
+
+
+
+OPTION1
+$ ssh-copy-id -i ~/hetzner.pub demo@12.34.56.78
+
+OPTION2
+if you are on mac or your machine does not have ssh-copy-id
+cat ~/hetzner.pub | ssh demo@12.34.56.78 'cat >> ~/.ssh/authorized_keys'
+
+OPTION3
+#manually add
+
+# switch users
+su - demo
+
+#if the .ssh directory does not exist create it and the auth file and chmod
+chmod 700 ~/.ssh
+chmod 600 .ssh/authorized_keys
+
+paste public key in: ~/.ssh/authorized_keys  and see something like
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAX ...
+
+
+3) Test the connection
+
+$ sudo ssh -i ~/hetzner.pem demo@12.34.56.78
+
+Should connect you without using a password, notice, that I am not using .pub but .pem now,
+that is a file hetzner, that we have renamed in step 1 to hetzner.pem.
+You may have to confirm the Key Pair with "yes" on the first login. 
+Both files were generated in step 1 using $ ssh-keygen -t rsa -b 2048 -v command, 
+but one is generated bwithout suffix.
+
+####  DISABLE ROOT LOGIN
+
+# edit
+vim /etc/ssh/sshd_config
+
+~~~~~~
+Port 1234
+PermitRootLogin no
+AllowUsers demo
+~~~~~~~~
+
+Port 1234 causes SSH to listen on port 1234. You can use any unused port from 1 to 65535.
+It's recommended to choose a privileged port (port 1-1024) which can only be used by root.
+If your SSH daemon stops working for some reason, 
+a rogue application can't intercept the connection.
+
+
+
+############ DEGUG SSH CONNECTION ##########
+
+service ssh stop      # will not kill existing ssh connections
+/usr/sbin/sshd -d     # full path to sshd executable needed, 'which sshd' can help
+...debug output...
+service ssh start
+
+########### GLOSSARY ################
+
+#login as the new user
+sudo -i  -u demo
+
+OR
+
+su - demo
+
+#login back as root
+su
