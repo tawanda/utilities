@@ -8,6 +8,9 @@ adduser demo
 ##### Add root previlages, run this as root
 gpasswd -a demo sudo
 
+##### set vim as the default text editor
+sudo update-alternatives --config editor
+
 ##### make the password not timeout so you are not annoyed
 # edit /etc/sudores type:
 visudo
