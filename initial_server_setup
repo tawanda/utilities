@@ -1,12 +1,23 @@
-# Change root password to a strong one
+####### Change root password to a strong one
 
 passwd
 
-# Create a new user
+###### Create a new user
 adduser demo
 
-# Add root previlages, run this as root
+##### Add root previlages, run this as root
 gpasswd -a demo sudo
+
+##### make the password not timeout so you are not annoyed
+# edit /etc/sudores type:
+visudo
+
+--settings--
+# Default for password prompt to stay up with no user input 0=forever
+Defaults passwd_timeout=0
+
+# Defualt for a session to remember your password 0=always  0<forever (i.e a negative number)
+Defaults timestamp_timeout=-1
 
 ###### Add Public Key Authentication ########
 1) Generate a Key Pair for authentication without password on yoour local machine
