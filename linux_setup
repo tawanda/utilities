@@ -22,7 +22,12 @@ Defaults passwd_timeout=0
 # Defualt for a session to remember your password 0=always  0<forever (i.e a negative number)
 Defaults timestamp_timeout=0
 
-======================================================
+==================NVIDIA====================================
+# If you want to revert back to stock nvidia conf file
+sudo nvidia-xconfig 
+
+set nvidia as gpu
+sudo mhwd-gpu --setgl nvidia
 
 
      _             _       _ _                  
@@ -52,8 +57,15 @@ yum install something
 
 yum install something.i586.rpm
 
-=========================================
+==============THE KEREL===========================
+#list available kernels
+mhwd-kernel -l
 
+#install a kernel
+sudo mhwd-kernel -i linux40 rmc
+
+
+========================================
   _   _ _                 _           _ _                  
  | | | | |__  _   _ _ __ | |_ _   _  | (_)_ __  _   ___  __
  | | | | '_ \| | | | '_ \| __| | | | | | | '_ \| | | \ \/ /
