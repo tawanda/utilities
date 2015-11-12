@@ -34,3 +34,20 @@ set cpo-=<
 set wcm=<c-z>
 map <f4> :emenu <c-z>
 "--- End sweet menu
+
+"--- Fix anoying cut paste
+noremap P "0p
+"noremap P "0P
+for s:i in ['"','*','+','-','.',':','%','/','=','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+        execute 'noremap "'.s:i.'p "'.s:i.'p'
+        execute 'noremap "'.s:i.'P "'.s:i.'P'
+endfor
+
+
+"The first line maps each p stroke to "0p. However, this prevents p from accessing any other registers.
+"P now always pastes from yanked text 
+"Therefore all p strokes with an explicitly selected register are mapped to the equivalent commandline expression within the for-loop. The same is done for P.
+"This way the standard behaviour is preserved, except for the implicit p and P strokes, which now use register 0 by default.
+"REF - http://stackoverflow.com/a/32488853/3571614
+
+"--- End Fix anoying cut paste
