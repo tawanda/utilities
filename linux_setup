@@ -22,6 +22,22 @@ Defaults passwd_timeout=0
 # Defualt for a session to remember your password 0=always  0<forever (i.e a negative number)
 Defaults timestamp_timeout=0
 
+-- dissable password prompt completley--
+
+Edit the sudoers file:
+
+sudo visudo
+Find this line:
+
+%sudo ALL=(ALL) ALL
+Change the line:
+
+%sudo ALL=(ALL) NOPASSWD: ALL
+
+
+
+
+
 ==================NVIDIA====================================
 # If you want to revert back to stock nvidia conf file
 sudo nvidia-xconfig 
