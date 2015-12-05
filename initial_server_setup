@@ -1,3 +1,7 @@
+## set timezone (ububtu)
+
+sudo dpkg-reconfigure tzdata
+
 ####### Change root password to a strong one
 
 passwd
