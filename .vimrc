@@ -51,3 +51,6 @@ endfor
 "REF - http://stackoverflow.com/a/32488853/3571614
 
 "--- End Fix anoying cut paste
+
+" Search is case insenssitive unless vim detects a cpital letter
+set smartcase
