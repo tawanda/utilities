@@ -29,7 +29,7 @@ Defaults timestamp_timeout=-1
 
 #### install basics
 
-sudo apt-get install -y build-essential python python-dev python-setuptools python-pip libjpeg-dev \
+sudo apt-get install -y build-essential python-dev python-setuptools python-pip libjpeg-dev \
     libtiff-dev zlib1g-dev libfreetype6-dev liblcms2-dev git
     
     
