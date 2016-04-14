@@ -10,7 +10,7 @@
 sudo update-alternatives --config editor
 
 
-===================vidudo=========================
+===================visudo=========================
 
 #to edit /etc/sudores type:
 visudo
