@@ -53,4 +53,6 @@ endfor
 "--- End Fix anoying cut paste
 
 " Search is case insenssitive unless vim detects a cpital letter
+" Worth noting that for smartcase to work, you also need set ignorecase
+set ignorecase
 set smartcase
