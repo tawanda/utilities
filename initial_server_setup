@@ -26,6 +26,13 @@ Defaults passwd_timeout=0
 # Defualt for a session to remember your password 0=always  0<forever (i.e a negative number)
 Defaults timestamp_timeout=-1
 
+
+#### install basics
+
+sudo apt-get install -y build-essential python python-dev python-setuptools python-pip libjpeg-dev \
+    libtiff-dev zlib1g-dev libfreetype6-dev liblcms2-dev git
+    
+    
 ###### Add Public Key Authentication ########
 1) Generate a Key Pair for authentication without password on yoour local machine
 
