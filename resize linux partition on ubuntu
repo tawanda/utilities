@@ -1,0 +1,26 @@
+    1  halt
+    2  sudo su adminuser
+    3  lvdisplay
+    4  cat /proc/partitions
+    5  pvdisplay
+    6  pvscan
+    7  cat /proc/partitions
+    8  cfdisk /dev/vda
+    9  cat /proc/partitions
+   10  pvcreate /dev/vda3
+   11  uptime
+   12  reboot
+   13  cat /proc/partitions
+   14  pvcreate /dev/vda3
+   15  pvdisplay
+   16  vgdisplay
+   17  vgextend ubuntu-vg /dev/vda3
+   18  lvdisplay
+   19  vgdisplay
+   20  lvdisplay
+   21  pvscan
+   22  lvdisplay
+   23  lvextend -l +100%FREE /dev/ubuntu-vg/root
+   24  lvdisplay
+   25  resize2fs /dev/ubuntu-vg/root
+   26  df -h
