@@ -36,23 +36,26 @@ map <f4> :emenu <c-z>
 "--- End sweet menu
 
 "--- Fix anoying cut paste
-noremap P "0p
-"noremap P "0P
-for s:i in ['"','*','+','-','.',':','%','/','=','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-        execute 'noremap "'.s:i.'p "'.s:i.'p'
-        execute 'noremap "'.s:i.'P "'.s:i.'P'
-endfor
-
-
-"The first line maps each p stroke to "0p. However, this prevents p from accessing any other registers.
-"P now always pastes from yanked text 
-"Therefore all p strokes with an explicitly selected register are mapped to the equivalent commandline expression within the for-loop. The same is done for P.
-"This way the standard behaviour is preserved, except for the implicit p and P strokes, which now use register 0 by default.
-"REF - http://stackoverflow.com/a/32488853/3571614
-
+noremap P "0p 
+" Shift p  pastes the copy register
 "--- End Fix anoying cut paste
 
+noremap A "a
+noremap B "b
+" access registers with a lil shortcut
+
+
 " Search is case insenssitive unless vim detects a cpital letter
-" Worth noting that for smartcase to work, you also need set ignorecase
 set ignorecase
 set smartcase
+
+" Makes F5 open the file explorere
+map <F5> :E <Enter>
+
+" From https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.oj7y8jrjf
+" Makes the file explorere default view cool
+let g:netrw_liststyle=3
+
+" Makes moving between tabs easier using <F9> and <F10> keys
+nnoremap <F9> :tabprevious<CR>
+nnoremap <F10> :tabnext<CR>
