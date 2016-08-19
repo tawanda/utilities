@@ -1,0 +1,12 @@
+
+sudo vim /etc/modules
+
+add these lines
+
+#added to fix heat issue
+battery
+ac
+thermal
+processor
+acpi-cpufreq
+cpufreq-userspace
