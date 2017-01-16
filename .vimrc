@@ -1,5 +1,5 @@
 " Sets default theme
-"colorscheme desert
+colorscheme desert
 
 " sets jj to escape
 imap jj <Esc>
@@ -69,15 +69,6 @@ let g:netrw_liststyle=3
 " Makes moving between tabs easier using <F9> and <F10> keys
 nnoremap <F9> :tabprevious<CR>
 nnoremap <F10> :tabnext<CR>
-
-" loads ctl-p
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" type \find in escaped mode to open ctrlp
-map <leader>find :CtrlP <Enter>
-
-" enable pathogen 
-call pathogen#infect()
 
 " ====================================== SCRIPTS ===========================================================
 
