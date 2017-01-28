@@ -1,0 +1,4 @@
+
+# AWS Centos 6 AMIs do not resize the root partition
+
+https://github.com/chef-partners/omnibus-marketplace/issues/34
