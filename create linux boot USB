@@ -1,0 +1,35 @@
+####################  IN MACOSX
+
+- open disk util and format the usb as FAT32
+- list the devices on your machine
+
+➜  diskutil list
+
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *1.0 TB     disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                  Apple_HFS Macintosh HD            999.3 GB   disk0s2
+   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
+/dev/disk2 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *7.7 GB     disk2
+   1:                        EFI EFI                     209.7 MB   disk2s1
+   2:       Microsoft Basic Data UNTITLED                7.5 GB     disk2s2
+
+- above there we see the USB we formatted called untitled on /dev/disk2, unmounnt it
+
+
+➜  diskutil unmountDisk /dev/disk2
+Unmount of all volumes on disk2 was successful
+
+- create the disk
+
+➜  sudo dd if=linuxmint-18.1-xfce-64bit.iso of=/dev/disk2 bs=1m
+
+
+### Monitoring progress of dd on MacOSX
+
+CTRL + T
+Sends SIGINFO to the process. This is a BSD feature OS X inherited.
+You must have the terminal window executing dd selected when entering CTRL + T for this to work.
