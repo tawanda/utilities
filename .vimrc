@@ -4,6 +4,14 @@ colorscheme desert
 " sets jj to escape
 imap jj <Esc>
 
+" To enable persistent undo create the undo directory, e.g. ~/.vim/undodir, and place the following settings into the .vimrc file:
+" see :help undo-branches
+" example :earlier 12h
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=100000
+set undoreload=100000
+
 " Exclude files and directories using Vim's wildignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
