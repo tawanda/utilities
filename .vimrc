@@ -12,6 +12,9 @@ set undofile
 set undolevels=100000
 set undoreload=100000
 
+" expand tabs to spaces
+set expandtab
+
 " Exclude files and directories using Vim's wildignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
