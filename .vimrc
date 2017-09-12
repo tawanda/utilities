@@ -47,7 +47,7 @@ set showmode
 "The first line sets a mapping so that pressing F2 in normal mode will invert the 'paste' option, and will then show the value of that option.
 "The second line allows you to press F2 when in insert mode, to toggle 'paste' on and off.
 "The third line enables displaying whether 'paste' is turned on in insert mode
-.
+
 "--- The following adds a sweet menu, press F4 to use it.
 source $VIMRUNTIME/menu.vim
 set wildmenu
@@ -63,6 +63,8 @@ noremap P "0p
 
 noremap A "a
 noremap B "b
+noremap C "c
+noremap D "d
 " access registers with a lil shortcut
 
 
