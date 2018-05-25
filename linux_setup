@@ -24,13 +24,16 @@ Defaults timestamp_timeout=0
 
 -- dissable password prompt completley--
 
-Edit the sudoers file:
+Edit the sudoers file type:
 
 sudo visudo
-Find this line:
+
+Then Find this line:
 
 %sudo ALL=(ALL) ALL
-Change the line:
+
+
+Change the line to become:
 
 %sudo ALL=(ALL) NOPASSWD: ALL
 
