@@ -3,6 +3,10 @@ colorscheme desert
 
 " sets jj to escape
 imap jj <Esc>
+imap <Space><Space> <Enter>
+imap dd <BS>
+" The time it takes to detect double key taps
+set timeoutlen=175
 
 " To enable persistent undo create the undo directory, e.g. ~/.vim/undodir, and place the following settings into the .vimrc file:
 " see :help undo-branches
@@ -71,6 +75,11 @@ noremap D "d
 " Search is case insenssitive unless vim detects a cpital letter
 set ignorecase
 set smartcase
+" highlight matched
+" search while typing
+set incsearch
+" wrap-around when searching
+set wrapscan
 
 " Makes F5 open the file explorere
 map <F5> :E <Enter>
