@@ -24,6 +24,10 @@ paste this mapping
   "^\UF72B" = moveToEndOfDocument:; // ctrl-end
   "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // ctrl-shift-home
   "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
+  "^x"  = "cut:";                                              /* Ctrl + X  */
+  "^v"  = "paste:";                                            /* Ctrl + V */
+  "^c"  = "copy:";                                             /* Ctrl + C */
+  "^z"  = "undo:";                                             /* Ctrl + Z */
 }
 ```
 
